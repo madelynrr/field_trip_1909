@@ -39,7 +39,7 @@ RSpec.describe "as a visitor" do
                                     departure_city: "Tempe",
                                     arrival_city: "Denver")
     passenger_1 = Passenger.create(name: "Bob",
-                                   age: 18)
+                                   age: 16)
     passenger_2 = Passenger.create(name: "Sally",
                                    age: 30)
     passenger_3 = Passenger.create(name: "Billy",
