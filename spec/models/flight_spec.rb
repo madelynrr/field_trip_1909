@@ -49,7 +49,7 @@ RSpec.describe Flight, type: :model do
                                      age: 40)
       flight.passengers << [passenger_1, passenger_2, passenger_3]
 
-      expect(flight.number_of_adults).to eq(2)
+      expect(flight.number_of_adults).to eq([passenger_2, passenger_3])
     end
   end
 end
