@@ -21,7 +21,7 @@ RSpec.describe "as a visitor" do
 
     visit "/passengers/#{passenger_1.id}"
 
-    expect(page).to have_content(passenger_1.name)
+    expect(page).to have_content("Name: #{passenger_1.name}")
     expect(page).to have_content("Flights:")
     expect(page).to have_link(flight_1.number)
     click_link "#{flight_2.number}"
