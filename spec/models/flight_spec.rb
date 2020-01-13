@@ -34,7 +34,7 @@ RSpec.describe Flight, type: :model do
       expect(flight.all_minors).to eq([passenger_1])
     end
 
-    it ".number_of_adults" do
+    it ".all_adults" do
       airline = Airline.create(name: "Southwest")
       flight = airline.flights.create(number: "714",
                                       date: "10/14/19",
@@ -49,7 +49,7 @@ RSpec.describe Flight, type: :model do
                                      age: 40)
       flight.passengers << [passenger_1, passenger_2, passenger_3]
 
-      expect(flight.number_of_adults).to eq([passenger_2, passenger_3])
+      expect(flight.all_adults).to eq([passenger_2, passenger_3])
     end
   end
 end

@@ -9,7 +9,7 @@ class Flight <ApplicationRecord
     passengers.where("age < 18")
   end
 
-  def number_of_adults
+  def all_adults
     passengers.where("age >= 18")
   end
 end
