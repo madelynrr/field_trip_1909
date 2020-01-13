@@ -28,4 +28,32 @@ RSpec.describe "as a visitor" do
 
     expect(current_path).to eq("/flights/#{flight_2.id}")
   end
+
+  it "can add a flight for a passenger" do
+    airline = Airline.create(name: "Southwest")
+    flight_1 = airline.flights.create(number: "714",
+                                    date: "10/14/19",
+                                    time: "10:30 AM",
+                                    departure_city: "Tempe",
+                                    arrival_city: "Denver")
+    # flight_2 = airline.flights.create(number: "515",
+    #                                 date: "10/21/19",
+    #                                 time: "12:30 PM",
+    #                                 departure_city: "Denver",
+    #                                 arrival_city: "Tempe")
+    passenger_1 = Passenger.create(name: "Bob",
+                                   age: 20)
+
+    visit "/passengers/#{passenger_1.id}"
+
+    expect(page).to have_content("Add A Flight")
+
+    fill_in :number, with: flight_1.number
+
+    click_button "Add Flight"
+    save_and_open_page
+
+    expect(current_path).to eq("/passengers/#{passenger_1.id}")
+    expect(page).to have_link("#{flight_1.number}")
+  end
 end
