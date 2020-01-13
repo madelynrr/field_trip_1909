@@ -13,7 +13,7 @@ flight = airline.flights.create(number: "714",
                                 departure_city: "Tempe",
                                 arrival_city: "Denver")
 passenger_1 = Passenger.create(name: "Bob",
-                               age: 20)
+                               age: 16)
 passenger_2 = Passenger.create(name: "Sally",
                                age: 30)
 passenger_3 = Passenger.create(name: "Billy",
