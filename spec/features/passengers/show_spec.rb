@@ -51,7 +51,6 @@ RSpec.describe "as a visitor" do
     fill_in :number, with: flight_1.number
 
     click_button "Add Flight"
-    save_and_open_page
 
     expect(current_path).to eq("/passengers/#{passenger_1.id}")
     expect(page).to have_link("#{flight_1.number}")
