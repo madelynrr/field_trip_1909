@@ -19,11 +19,11 @@ RSpec.describe "as a visitor" do
 
     visit "/flights/#{flight.id}"
 
-    expect(page).to have_content(flight.number)
-    expect(page).to have_content(flight.date)
-    expect(page).to have_content(flight.time)
-    expect(page).to have_content(flight.departure_city)
-    expect(page).to have_content(flight.arrival_city)
+    expect(page).to have_content("Flight Number: #{flight.number}")
+    expect(page).to have_content("Date: #{flight.date}")
+    expect(page).to have_content("Time: #{flight.time}")
+    expect(page).to have_content("Departure City: #{flight.departure_city}")
+    expect(page).to have_content("Arrival City: #{flight.arrival_city}")
     expect(page).to have_content("Airline: #{airline.name}")
     expect(page).to have_content("Passengers:")
     expect(page).to have_content(passenger_1.name)
