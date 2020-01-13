@@ -25,7 +25,9 @@ RSpec.describe "as a visitor" do
     expect(page).to have_content(flight.departure_city)
     expect(page).to have_content(flight.arrival_city)
     expect(page).to have_content("Airline: #{airline.name}")
-    expect(page).to have_content("Passengers: #{passenger_1.name} #{passenger_2.name}")
+    expect(page).to have_content("Passengers:")
+    expect(page).to have_content(passenger_1.name)
+    expect(page).to have_content(passenger_2.name)
     expect(page).not_to have_content(passenger_3.name)
   end
 end
